@@ -1,0 +1,46 @@
+@import url(../core/variables.css);
+
+/* Tarjeta Login */
+.login-card {
+    background: var(--blanco);
+    padding: 40px;
+    width: 360px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border-top: 6px solid var(--primario);
+}
+
+/* Tarjetas Home */
+.grid-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card-home {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 25px;
+    text-decoration: none;
+    color: var(--letra);
+    border: 2px solid var(--secundario);
+    transition: 0.25s ease;
+}
+
+.card-home h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: var(--primario);
+}
+
+.card-home p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.card-home:hover {
+    border-color: var(--primario);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}

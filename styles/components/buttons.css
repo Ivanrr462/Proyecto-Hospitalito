@@ -1,0 +1,26 @@
+@import url(../core/variables.css);
+
+/* Botón formulario */
+.form-submit {
+    display: block;
+    text-align: center;
+    background: var(--primario);
+    color: var(--blanco);
+    padding: 12px;
+    width: 93%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.form-submit:hover {
+    background: var(--primario-hover);
+}
+
+/* quitar el marco azul */
+.form-submit:focus,
+.form-submit:active {
+    outline: none;
+}

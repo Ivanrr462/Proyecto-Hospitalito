@@ -1,0 +1,20 @@
+@import url(../components/buttons.css);
+@import url(../core/variables.css);
+@import url(../components/cards.css);
+@import url(../core/reset.css);
+@import url(../components/header.css);
+
+/* Contenido */
+.contenedor {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.bienvenida {
+    font-size: 2rem;
+    color: var(--primario);
+    margin-bottom: 30px;
+}
+
+

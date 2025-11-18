@@ -1,0 +1,25 @@
+@import url(../core/variables.css);
+
+.header {
+    background: var(--primario);
+    color: var(--blanco);
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    margin: 0;
+}
+
+.nav a {
+    color: var(--blanco);
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    cursor: pointer;
+}

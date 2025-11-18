@@ -1,0 +1,9 @@
+@import url(variables.css);
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--blanco);
+    margin: 0;
+    padding: 0;
+}
+
