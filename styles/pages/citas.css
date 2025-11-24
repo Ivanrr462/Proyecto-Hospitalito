@@ -1,0 +1,52 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: #f4f9ff;
+    margin: 0;
+}
+
+/* Título */
+.titulo {
+    font-size: 1.8rem;
+    color: #0D3B66;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tabla thead {
+    background: #0D3B66;
+    color: white;
+}
+
+.tabla th, .tabla td {
+    padding: 14px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.tabla tr:nth-child(even) {
+    background: #f1f6ff;
+}
+
+/* Botón de acción */
+.btn-tabla {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #6FA3D8;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-tabla:hover {
+    background: #0D3B66;
+}

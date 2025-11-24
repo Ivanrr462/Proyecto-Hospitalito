@@ -1,0 +1,21 @@
+@import url('../core/variables.css');
+
+/* Formulario búsqueda */
+.form-busqueda {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input-text {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--secundario);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.input-text:focus {
+    border-color: var(--primario);
+    outline: none;
+}

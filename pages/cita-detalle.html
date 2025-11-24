@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Cita</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Detalle de Cita</h1>
+    <nav class="nav">
+        <a href="citas-lista.html">Volver</a>
+        <a href="../login.html">Cerrar sesión</a>
+    </nav>
+</header>
+
+<main class="contenedor">
+
+    <section class="card-detalle">
+        <h2>Información del paciente</h2>
+
+        <p><strong>Nombre:</strong> Ana Rodríguez</p>
+        <p><strong>Edad:</strong> 34 años</p>
+        <p><strong>Motivo:</strong> Dolor de cabeza recurrente</p>
+        <p><strong>Fecha:</strong> 15/03/2025</p>
+        <p><strong>Hora:</strong> 10:30</p>
+    </section>
+
+    <section class="card-form">
+        <h2>Registrar prescripción</h2>
+
+        <form class="form">
+            <label>
+                Medicamento:
+                <input type="text" placeholder="Nombre del medicamento">
+            </label>
+
+            <label>
+                Dosis:
+                <input type="text" placeholder="Ej: 500 mg cada 8h">
+            </label>
+
+            <label>
+                Observaciones:
+                <textarea rows="4" placeholder="Detalles adicionales"></textarea>
+            </label>
+
+            <button type="submit" class="btn-primario">Guardar prescripción</button>
+        </form>
+    </section>
+
+</main>
+
+</body>
+</html>

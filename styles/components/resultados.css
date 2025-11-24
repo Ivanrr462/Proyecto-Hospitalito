@@ -1,0 +1,26 @@
+@import url('../core/variables.css');
+
+/* Resultados de Busqueda de pacientes */
+.lista-resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.resultado {
+    background: var(--blanco);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid var(--secundario);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.resultado h3 {
+    margin: 0;
+    color: var(--primario);
+}
+
+.resultado p {
+    margin: 6px 0;
+    color: var(--letra);
+}

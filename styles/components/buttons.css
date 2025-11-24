@@ -24,3 +24,35 @@
 .form-submit:active {
     outline: none;
 }
+
+
+/* Botones de Busqueda de pacientes */
+.btn-primario {
+    padding: 12px 18px;
+    margin: 0;
+    background: var(--primario);
+    color: var(--blanco);
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primario:hover {
+    background: var(--primario-hover);
+}
+
+/* Botón secundario */
+.btn-secundario {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-secundario:hover {
+    background: var(--primario);
+}
