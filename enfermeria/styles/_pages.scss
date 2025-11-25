@@ -1,0 +1,100 @@
+.page-mapa-camas {
+    h1 {
+        color: $primario;
+        margin-bottom: 20px;
+    }
+
+    .camas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .cama {
+        @include card;
+        text-align: center;
+        padding: 30px 20px;
+        font-weight: 600;
+
+        small {
+            display: block;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        strong {
+            color: $primario;
+        }
+
+        &.ocupada {
+            border-color: #b10000;
+            background: #ffe5e5;
+        }
+
+        &.libre {
+            border-color: #009b2f;
+            background: #e1ffe9;
+        }
+
+        &.mantenimiento {
+            border-color: #ff8800;
+            background: #fff3e0;
+        }
+    }
+}
+
+.page-hoja-medicacion {
+    h1 {
+        color: $primario;
+        margin-bottom: 20px;
+    }
+
+    .medicacion-card {
+        @include card;
+        margin-bottom: 20px;
+
+        .paciente {
+            font-weight: 600;
+            color: $primario;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid $secundario;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid lighten($secundario, 15%);
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .tabla {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+
+        th, td {
+            padding: 12px;
+            border: 1px solid $secundario;
+        }
+
+        th {
+            background: $primario;
+            color: $blanco;
+        }
+    }
+
+    .acciones {
+        margin-top: 20px;
+
+        .btn {
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+// Centrado flexible
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Estilo de tarjeta hospitalaria
+@mixin card {
+    background: $blanco;
+    border: 2px solid $secundario;
+    border-radius: $radio;
+    padding: 25px;
+    box-shadow: none;
+    transition: 0.25s ease;
+
+    &:hover {
+        border-color: $primario;
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+    }
+}
+
+// Botón principal
+@mixin boton {
+    display: block;
+    text-align: center;
+    background: $primario;
+    color: $blanco;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+        background: $primario-hover;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
