@@ -19,3 +19,26 @@
     border-color: var(--primario);
     outline: none;
 }
+
+/* Formulario cita-detalle */
+.form label {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--letra);
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--secundario);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: var(--primario);
+    outline: none;
+}

@@ -44,3 +44,23 @@
     box-shadow: 0 5px 12px rgba(0,0,0,0.1);
     transform: translateY(-3px);
 }
+
+/* Card cita-detalle */
+.card-detalle,
+.card-form {
+    background: var(--blanco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.card-detalle h2,
+.card-form h2 {
+    color: var(--primario);
+}
+
+.card-detalle p {
+    margin: 6px 0;
+    color: var(--letra);
+} 

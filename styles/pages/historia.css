@@ -1,36 +1,12 @@
-body {
-    font-family: 'Ubuntu', sans-serif;
-    background: #f4f9ff;
-    margin: 0;
-}
+@import url('../core/reset.css');
+@import url('../components/header.css');
+@import url('../core/variables.css');
+@import url('../components/historial.css');
 
 .titulo {
-    color: #0D3B66;
+    color: var(--primario);
     font-size: 1.8rem;
     margin-bottom: 25px;
 }
 
-/* Entradas del historial */
-.historial {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
-.entrada {
-    background: white;
-    padding: 22px;
-    border-radius: 12px;
-    border-left: 6px solid #6FA3D8;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.entrada h3 {
-    margin: 0 0 10px;
-    color: #0D3B66;
-}
-
-.entrada p {
-    margin: 4px 0;
-    color: #06233f;
-}

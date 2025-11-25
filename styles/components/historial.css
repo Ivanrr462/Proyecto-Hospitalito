@@ -1,0 +1,26 @@
+@import url('../core/variables.css');
+
+/* Entradas del historial de citas */
+.historial {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.entrada {
+    background: var(--blanco);
+    padding: 22px;
+    border-radius: 12px;
+    border-left: 6px solid var(--secundario);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.entrada h3 {
+    margin: 0 0 10px;
+    color: var(--primario);
+}
+
+.entrada p {
+    margin: 4px 0;
+    color: var(--letra);
+}

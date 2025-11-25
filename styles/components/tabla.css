@@ -1,0 +1,26 @@
+@import url('../core/variables.css');
+
+/* Tabla Citas */
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--blanco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tabla thead {
+    background: var(--primario);
+    color: var(--blanco);
+}
+
+.tabla th, .tabla td {
+    padding: 14px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.tabla tr:nth-child(even) {
+    background: #f1f6ff;
+}
