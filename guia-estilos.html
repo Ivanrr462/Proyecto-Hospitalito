@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estilos - Sistema Hospitalario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <style>
+        .guia-section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--secundario);
+        }
+        .guia-section h2 {
+            color: var(--primario);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .guia-section h3 {
+            color: var(--primario);
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .color-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 500;
+        }
+        .color-box.primario {
+            background: var(--primario);
+        }
+        .color-box.secundario {
+            background: var(--secundario);
+        }
+        .color-box.primario-hover {
+            background: var(--primario-hover);
+        }
+        .color-box.blanco {
+            background: var(--blanco);
+            color: var(--letra);
+            border: 2px solid var(--secundario);
+        }
+        .color-box.letra {
+            background: var(--letra);
+        }
+        .code-example {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        .example-container {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .typography-sample {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="header-title">Guía de Estilos - Sistema Hospitalario</h1>
+        <nav class="nav">
+            <a href="home.html">Volver al inicio</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- COLORES -->
+        <section class="guia-section">
+            <h2>🎨 Paleta de Colores</h2>
+            <p>Variables CSS definidas en <code>styles/core/variables.css</code></p>
+            
+            <div class="color-palette">
+                <div class="color-box primario">
+                    <div>Primario</div>
+                    <small>#0D3B66</small><br>
+                    <small>var(--primario)</small>
+                </div>
+                <div class="color-box secundario">
+                    <div>Secundario</div>
+                    <small>#6FA3D8</small><br>
+                    <small>var(--secundario)</small>
+                </div>
+                <div class="color-box primario-hover">
+                    <div>Primario Hover</div>
+                    <small>#0b3156</small><br>
+                    <small>var(--primario-hover)</small>
+                </div>
+                <div class="color-box blanco">
+                    <div>Blanco</div>
+                    <small>white</small><br>
+                    <small>var(--blanco)</small>
+                </div>
+                <div class="color-box letra">
+                    <div>Texto</div>
+                    <small>#06233f</small><br>
+                    <small>var(--letra)</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIPOGRAFÍA -->
+        <section class="guia-section">
+            <h2>✍️ Tipografía</h2>
+            <p>Fuente: <strong>Ubuntu</strong> (Google Fonts)</p>
+            
+            <div class="typography-sample">
+                <h1>Título H1 - Sistema Hospitalario</h1>
+                <h2 style="color: var(--primario);">Título H2 - Bienvenido</h2>
+                <h3 style="color: var(--primario);">Título H3 - Lista de citas</h3>
+                <p>Texto de párrafo normal. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p><strong>Texto en negrita</strong> y <em>texto en cursiva</em></p>
+            </div>
+        </section>
+
+        <!-- BOTONES -->
+        <section class="guia-section">
+            <h2>🔘 Botones</h2>
+            
+            <h3>.form-submit</h3>
+            <div class="example-container">
+                <a href="#" class="form-submit" style="width: 300px;">Botón de Formulario</a>
+            </div>
+            <div class="code-example">
+&lt;a href="#" class="form-submit"&gt;Ingresar&lt;/a&gt;
+            </div>
+
+            <h3>.btn-primario</h3>
+            <div class="example-container">
+                <button class="btn-primario">Buscar</button>
+            </div>
+            <div class="code-example">
+&lt;button class="btn-primario"&gt;Buscar&lt;/button&gt;
+            </div>
+
+            <h3>.btn-secundario</h3>
+            <div class="example-container">
+                <a href="#" class="btn-secundario">Ver historial</a>
+            </div>
+            <div class="code-example">
+&lt;a href="#" class="btn-secundario"&gt;Ver historial&lt;/a&gt;
+            </div>
+
+            <h3>.btn-tabla</h3>
+            <div class="example-container">
+                <a href="#" class="btn-tabla">Ver</a>
+            </div>
+            <div class="code-example">
+&lt;a href="#" class="btn-tabla"&gt;Ver&lt;/a&gt;
+            </div>
+
+            <h3>.btn-primario-detalle</h3>
+            <div class="example-container">
+                <button class="btn-primario-detalle">Guardar prescripción</button>
+            </div>
+            <div class="code-example">
+&lt;button class="btn-primario-detalle"&gt;Guardar&lt;/button&gt;
+            </div>
+        </section>
+
+        <!-- TARJETAS -->
+        <section class="guia-section">
+            <h2>🃏 Tarjetas</h2>
+
+            <h3>.login-card</h3>
+            <div class="example-container">
+                <div class="login-card">
+                    <h2 style="text-align: center; color: var(--primario);">Tarjeta de Login</h2>
+                    <p>Padding: 40px, Border-radius: 16px</p>
+                    <p>Border-top: 6px solid primario</p>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="login-card"&gt;
+    &lt;h1 class="titulo"&gt;Iniciar Sesión&lt;/h1&gt;
+    &lt;!-- contenido --&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>.card-home (Grid)</h3>
+            <div class="example-container">
+                <div class="grid-home">
+                    <a class="card-home" href="#">
+                        <h3>Lista de citas</h3>
+                        <p>Ver y gestionar las citas programadas.</p>
+                    </a>
+                    <a class="card-home" href="#">
+                        <h3>Registro de prescripciones</h3>
+                        <p>Registrar medicación y tratamientos.</p>
+                    </a>
+                    <a class="card-home" href="#">
+                        <h3>Historia clínica</h3>
+                        <p>Acceder a los historiales completos.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="grid-home"&gt;
+    &lt;a class="card-home" href="#"&gt;
+        &lt;h3&gt;Título&lt;/h3&gt;
+        &lt;p&gt;Descripción&lt;/p&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>.card-detalle / .card-form</h3>
+            <div class="example-container">
+                <div class="card-detalle">
+                    <h2>Información del paciente</h2>
+                    <p><strong>Nombre:</strong> Ana Rodríguez</p>
+                    <p><strong>Edad:</strong> 34 años</p>
+                    <p><strong>Motivo:</strong> Dolor de cabeza recurrente</p>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="card-detalle"&gt;
+    &lt;h2&gt;Información del paciente&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;Nombre:&lt;/strong&gt; Ana Rodríguez&lt;/p&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- FORMULARIOS -->
+        <section class="guia-section">
+            <h2>📝 Formularios</h2>
+            
+            <h3>.input (Login)</h3>
+            <div class="example-container">
+                <label class="label">
+                    Correo:
+                    <input type="email" class="input" placeholder="ejemplo@hospital.com">
+                </label>
+            </div>
+            <div class="code-example">
+&lt;label class="label"&gt;
+    Correo:
+    &lt;input type="email" class="input" placeholder="ejemplo@hospital.com"&gt;
+&lt;/label&gt;
+            </div>
+
+            <h3>.form-busqueda</h3>
+            <div class="example-container">
+                <form class="form-busqueda">
+                    <input type="text" class="input-text" placeholder="Introduce nombre o DNI">
+                    <button type="submit" class="btn-primario">Buscar</button>
+                </form>
+            </div>
+            <div class="code-example">
+&lt;form class="form-busqueda"&gt;
+    &lt;input type="text" class="input-text" placeholder="Texto"&gt;
+    &lt;button class="btn-primario"&gt;Buscar&lt;/button&gt;
+&lt;/form&gt;
+            </div>
+        </section>
+
+        <!-- TABLAS -->
+        <section class="guia-section">
+            <h2>📊 Tablas</h2>
+            
+            <h3>.tabla</h3>
+            <div class="example-container">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Médico</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ana Rodríguez</td>
+                            <td>15/03/2025</td>
+                            <td>10:30</td>
+                            <td>Dr. García</td>
+                            <td><a class="btn-tabla" href="#">Ver</a></td>
+                        </tr>
+                        <tr>
+                            <td>José Martínez</td>
+                            <td>16/03/2025</td>
+                            <td>12:00</td>
+                            <td>Dra. López</td>
+                            <td><a class="btn-tabla" href="#">Ver</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code-example">
+&lt;table class="tabla"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Paciente&lt;/th&gt;
+            &lt;th&gt;Fecha&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ana Rodríguez&lt;/td&gt;
+            &lt;td&gt;15/03/2025&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </div>
+        </section>
+
+        <!-- HISTORIAL -->
+        <section class="guia-section">
+            <h2>📋 Historial y Resultados</h2>
+            
+            <h3>.historial .entrada</h3>
+            <div class="example-container">
+                <div class="historial">
+                    <div class="entrada">
+                        <h3>10/02/2025 — Consulta general</h3>
+                        <p><strong>Motivo:</strong> Mareos matutinos</p>
+                        <p><strong>Diagnóstico:</strong> Hipotensión leve</p>
+                        <p><strong>Tratamiento:</strong> Hidratación y control de presión</p>
+                    </div>
+                    <div class="entrada">
+                        <h3>03/01/2025 — Control trimestral</h3>
+                        <p><strong>Motivo:</strong> Revisión general</p>
+                        <p><strong>Diagnóstico:</strong> Sin novedades</p>
+                    </div>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="historial"&gt;
+    &lt;div class="entrada"&gt;
+        &lt;h3&gt;10/02/2025 — Consulta general&lt;/h3&gt;
+        &lt;p&gt;&lt;strong&gt;Motivo:&lt;/strong&gt; Mareos&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+
+            <h3>.lista-resultados .resultado</h3>
+            <div class="example-container">
+                <div class="lista-resultados">
+                    <div class="resultado">
+                        <h3>Ana Rodríguez</h3>
+                        <p>DNI: 12345678A</p>
+                        <a class="btn-secundario" href="#">Ver historial</a>
+                    </div>
+                    <div class="resultado">
+                        <h3>Luis Hernández</h3>
+                        <p>DNI: 99887744B</p>
+                        <a class="btn-secundario" href="#">Ver historial</a>
+                    </div>
+                </div>
+            </div>
+            <div class="code-example">
+&lt;div class="lista-resultados"&gt;
+    &lt;div class="resultado"&gt;
+        &lt;h3&gt;Ana Rodríguez&lt;/h3&gt;
+        &lt;p&gt;DNI: 12345678A&lt;/p&gt;
+        &lt;a class="btn-secundario" href="#"&gt;Ver historial&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </div>
+        </section>
+
+        <!-- LAYOUT -->
+        <section class="guia-section">
+            <h2>📐 Layout y Contenedores</h2>
+            
+            <h3>.contenedor</h3>
+            <p>Contenedor principal con max-width de 1100px y márgenes automáticos.</p>
+            <div class="code-example">
+&lt;main class="contenedor"&gt;
+    &lt;!-- contenido --&gt;
+&lt;/main&gt;
+            </div>
+
+            <h3>.header</h3>
+            <p>Header con fondo primario, flex entre título y navegación.</p>
+            <div class="code-example">
+&lt;header class="header"&gt;
+    &lt;h1 class="header-title"&gt;Sistema Hospitalario&lt;/h1&gt;
+    &lt;nav class="nav"&gt;
+        &lt;a href="#"&gt;Inicio&lt;/a&gt;
+        &lt;a href="#"&gt;Cerrar sesión&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+            </div>
+
+            <h3>Clases de utilidad</h3>
+            <div class="code-example">
+.bienvenida     - Título de bienvenida (2rem, color primario)
+.titulo         - Títulos de sección (1.8rem, color primario)
+.label          - Etiquetas de formulario
+.input-text     - Input de texto para búsquedas
+            </div>
+        </section>
+
+        <!-- ESTRUCTURA DE ARCHIVOS -->
+        <section class="guia-section">
+            <h2>📁 Estructura de Archivos CSS</h2>
+            
+            <div class="code-example">
+styles/
+├── main.css                    # Importa todos los estilos de páginas
+├── core/
+│   ├── variables.css           # Variables CSS (:root)
+│   ├── reset.css               # Reset básico
+│   └── layout.css              # (vacío)
+├── components/
+│   ├── buttons.css             # Todos los estilos de botones
+│   ├── cards.css               # Tarjetas (login-card, card-home, etc.)
+│   ├── header.css              # Header y navegación
+│   ├── tabla.css               # Tablas de datos
+│   ├── historial.css           # Entradas de historial
+│   ├── resultados.css          # Resultados de búsqueda
+│   └── forms.css               # (vacío)
+└── pages/
+    ├── login.css               # Estilos específicos de login
+    ├── home.css                # Estilos específicos de home
+    ├── citas.css               # Estilos de lista de citas
+    ├── cita-detalle.css        # Estilos de detalle de cita
+    ├── historia.css            # Estilos de historia clínica
+    └── busqueda.css            # Estilos de búsqueda de pacientes
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
