@@ -1,13 +1,84 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>urgencias-tailwind-vite</title>
-  </head>
-  <body>
-    <div id="app"></div>
+    <title>Urgencias - Sistema Hospitalario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-['Ubuntu']">
+    
+    <!-- Header -->
+    <header class="bg-[#0D3B66] text-white py-6 shadow-lg">
+        <div class="px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">🚨 Urgencias</h1>
+            <nav class="flex gap-6">
+                <a href="../home.html" class="hover:text-[#6FA3D8] transition-colors">Inicio</a>
+                <a href="../index.html" class="hover:text-[#6FA3D8] transition-colors">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-[#0D3B66] to-[#6FA3D8] text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Gestión de Urgencias</h2>
+            <p class="text-xl opacity-95">Sistema integral para el manejo de pacientes en urgencias</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Card: Registro -->
+            <a href="./registro.html" class="group bg-white rounded-2xl border-2 border-[#6FA3D8] p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-2xl font-bold text-[#0D3B66] mb-3">Registro en Urgencias</h3>
+                <p class="text-[#06233f] text-lg">Registrar nuevo paciente que llega a urgencias</p>
+            </a>
+
+            <!-- Card: Triaje -->
+            <a href="./triaje.html" class="group bg-white rounded-2xl border-2 border-[#6FA3D8] p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <div class="text-5xl mb-4">🏥</div>
+                <h3 class="text-2xl font-bold text-[#0D3B66] mb-3">Triaje</h3>
+                <p class="text-[#06233f] text-lg">Clasificar prioridad y gravedad del paciente</p>
+            </a>
+
+            <!-- Card: Búsqueda de Pacientes -->
+            <a href="../preinscripciones/buscar-pacientes.html" class="group bg-white rounded-2xl border-2 border-[#6FA3D8] p-8 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <div class="text-5xl mb-4">🔍</div>
+                <h3 class="text-2xl font-bold text-[#0D3B66] mb-3">Buscar Pacientes</h3>
+                <p class="text-[#06233f] text-lg">Consultar pacientes en el sistema</p>
+            </a>
+
+        </div>
+
+        <!-- Stats Section -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="text-4xl font-bold text-red-500 mb-2">8</div>
+                <div class="text-gray-600">Pacientes en espera</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="text-4xl font-bold text-orange-500 mb-2">3</div>
+                <div class="text-gray-600">Prioridad alta</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="text-4xl font-bold text-yellow-500 mb-2">5</div>
+                <div class="text-gray-600">Prioridad media</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                <div class="text-4xl font-bold text-[#6FA3D8] mb-2">12</div>
+                <div class="text-gray-600">Atendidos hoy</div>
+            </div>
+        </div>
+
+    </main>
+
     <script type="module" src="/src/main.js"></script>
-  </body>
+</body>
 </html>
