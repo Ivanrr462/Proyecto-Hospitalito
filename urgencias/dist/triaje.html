@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Hospitalito/urgencias/dist/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triaje - Sistema Hospitalario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/Hospitalito/urgencias/dist/assets/main-CDFiH7rZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/Hospitalito/urgencias/dist/assets/main-ktnkTQdP.css">
+</head>
+<body class="bg-gray-50 font-['Ubuntu']">
+    
+    <!-- Header -->
+    <header class="bg-[#0D3B66] text-white py-6 shadow-lg">
+        <div class="px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">🏥 Triaje</h1>
+            <nav class="flex gap-6">
+                <a href="/Hospitalito/urgencias/dist/index.html" class="hover:text-[#6FA3D8] transition-colors">Urgencias</a>
+                <a href="/Hospitalito/home.html" class="hover:text-[#6FA3D8] transition-colors">Inicio</a>
+                <a href="/Hospitalito/index.html" class="hover:text-[#6FA3D8] transition-colors">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- Card Form -->
+        <div class="bg-white rounded-2xl border-t-6 border-t-red-500 shadow-lg p-10">
+            
+            <h2 class="text-3xl font-bold text-[#0D3B66] mb-8 text-center">Clasificación de Urgencia (Triaje)</h2>
+            
+            <!-- Info Box -->
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg">
+                <p class="text-sm text-blue-800">
+                    <strong>Sistema de triaje Manchester:</strong> Clasifica a los pacientes según la gravedad de su condición para priorizar la atención médica.
+                </p>
+            </div>
+
+            <form id="formTriaje" class="space-y-6">
+                
+                <!-- Sección: Búsqueda de Paciente -->
+                <div class="border-l-4 border-[#6FA3D8] pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Datos del Paciente</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="md:col-span-2">
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Buscar paciente *
+                            </label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="DNI o nombre del paciente"
+                            >
+                        </div>
+                        <div class="flex items-end">
+                            <button 
+                                type="button" 
+                                class="w-full px-6 py-3 bg-[#6FA3D8] text-white rounded-lg font-medium hover:bg-[#5a8bc7] transition-colors"
+                            >
+                                🔍 Buscar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Paciente encontrado (se mostraría con JavaScript) -->
+                    <div class="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg hidden" id="pacienteInfo">
+                        <p><strong>Paciente:</strong> Ana María García López</p>
+                        <p><strong>DNI:</strong> 12345678A</p>
+                        <p><strong>Edad:</strong> 45 años</p>
+                    </div>
+                </div>
+
+                <!-- Sección: Constantes Vitales -->
+                <div class="border-l-4 border-yellow-500 pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Constantes Vitales</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Presión arterial (mmHg)
+                            </label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 120/80"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Frecuencia cardíaca (lpm)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 75"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Temperatura (°C)
+                            </label>
+                            <input 
+                                type="number" 
+                                step="0.1"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 36.5"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Saturación O₂ (%)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 98"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Frecuencia respiratoria (rpm)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 16"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Glucemia (mg/dL)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: 90"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Evaluación y Síntomas -->
+                <div class="border-l-4 border-orange-500 pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Evaluación y Síntomas</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Síntomas principales *
+                            </label>
+                            <textarea 
+                                required
+                                rows="3"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Describa los síntomas principales que presenta el paciente..."
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Nivel de consciencia *
+                            </label>
+                            <select 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                            >
+                                <option value="">Seleccionar...</option>
+                                <option value="alerta">Alerta (A) - Consciente y orientado</option>
+                                <option value="verbal">Respuesta verbal (V) - Responde a estímulos verbales</option>
+                                <option value="dolor">Respuesta al dolor (D) - Solo responde al dolor</option>
+                                <option value="inconsciente">Inconsciente (I) - No responde</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Escala del dolor (0-10)
+                            </label>
+                            <input 
+                                type="range" 
+                                min="0" 
+                                max="10" 
+                                value="5" 
+                                class="w-full"
+                                id="dolorRange"
+                            >
+                            <div class="flex justify-between text-sm text-gray-600 mt-2">
+                                <span>0 - Sin dolor</span>
+                                <span id="dolorValue" class="font-bold text-lg text-[#0D3B66]">5</span>
+                                <span>10 - Dolor máximo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Clasificación de Urgencia -->
+                <div class="border-l-4 border-red-600 pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Clasificación de Urgencia *</h3>
+                    
+                    <div class="space-y-3">
+                        <!-- Nivel 1: Resucitación -->
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-red-600 transition-colors">
+                            <input type="radio" name="prioridad" value="1" required class="w-5 h-5 text-red-600">
+                            <div class="ml-4 flex-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
+                                    <span class="font-bold text-red-600">RESUCITACIÓN</span>
+                                    <span class="ml-auto text-sm text-gray-600">Inmediato</span>
+                                </div>
+                                <p class="ml-11 text-sm text-gray-600 mt-1">Riesgo vital inmediato. Requiere atención instantánea.</p>
+                            </div>
+                        </label>
+
+                        <!-- Nivel 2: Emergencia -->
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-orange-600 transition-colors">
+                            <input type="radio" name="prioridad" value="2" required class="w-5 h-5 text-orange-600">
+                            <div class="ml-4 flex-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
+                                    <span class="font-bold text-orange-600">EMERGENCIA</span>
+                                    <span class="ml-auto text-sm text-gray-600">≤ 10 min</span>
+                                </div>
+                                <p class="ml-11 text-sm text-gray-600 mt-1">Situación de emergencia. Alto riesgo vital.</p>
+                            </div>
+                        </label>
+
+                        <!-- Nivel 3: Urgencia -->
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-yellow-500 transition-colors">
+                            <input type="radio" name="prioridad" value="3" required class="w-5 h-5 text-yellow-500">
+                            <div class="ml-4 flex-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold">3</span>
+                                    <span class="font-bold text-yellow-600">URGENCIA</span>
+                                    <span class="ml-auto text-sm text-gray-600">≤ 60 min</span>
+                                </div>
+                                <p class="ml-11 text-sm text-gray-600 mt-1">Potencialmente urgente. Requiere atención pronto.</p>
+                            </div>
+                        </label>
+
+                        <!-- Nivel 4: Menos urgente -->
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-500 transition-colors">
+                            <input type="radio" name="prioridad" value="4" required class="w-5 h-5 text-green-500">
+                            <div class="ml-4 flex-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">4</span>
+                                    <span class="font-bold text-green-600">MENOS URGENTE</span>
+                                    <span class="ml-auto text-sm text-gray-600">≤ 120 min</span>
+                                </div>
+                                <p class="ml-11 text-sm text-gray-600 mt-1">Menos urgente. Puede esperar sin riesgo.</p>
+                            </div>
+                        </label>
+
+                        <!-- Nivel 5: No urgente -->
+                        <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                            <input type="radio" name="prioridad" value="5" required class="w-5 h-5 text-blue-500">
+                            <div class="ml-4 flex-1">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">5</span>
+                                    <span class="font-bold text-blue-600">NO URGENTE</span>
+                                    <span class="ml-auto text-sm text-gray-600">≤ 240 min</span>
+                                </div>
+                                <p class="ml-11 text-sm text-gray-600 mt-1">No urgente. Problema administrativo o consulta simple.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Observaciones -->
+                <div class="border-l-4 border-[#6FA3D8] pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Observaciones Adicionales</h3>
+                    
+                    <textarea 
+                        rows="4"
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                        placeholder="Observaciones adicionales sobre el estado del paciente, historial relevante, etc."
+                    ></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 justify-end pt-6">
+                    <a 
+                        href="/Hospitalito/urgencias/dist/index.html" 
+                        class="px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+                    >
+                        Cancelar
+                    </a>
+                    <button 
+                        type="submit" 
+                        class="px-8 py-3 bg-[#0D3B66] text-white rounded-lg font-medium hover:bg-[#0b3156] transition-colors"
+                    >
+                        Guardar triaje
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script>
+        // Actualizar valor del dolor en tiempo real
+        const dolorRange = document.getElementById('dolorRange');
+        const dolorValue = document.getElementById('dolorValue');
+        dolorRange.addEventListener('input', (e) => {
+            dolorValue.textContent = e.target.value;
+        });
+    </script>
+</body>
+</html>

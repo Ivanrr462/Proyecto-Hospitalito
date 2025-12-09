@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Hospitalito/urgencias/dist/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro en Urgencias - Sistema Hospitalario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/Hospitalito/urgencias/dist/assets/main-CDFiH7rZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/Hospitalito/urgencias/dist/assets/main-ktnkTQdP.css">
+</head>
+<body class="bg-gray-50 font-['Ubuntu']">
+    
+    <!-- Header -->
+    <header class="bg-[#0D3B66] text-white py-6 shadow-lg">
+        <div class="px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">📝 Registro en Urgencias</h1>
+            <nav class="flex gap-6">
+                <a href="/Hospitalito/urgencias/dist/index.html" class="hover:text-[#6FA3D8] transition-colors">Urgencias</a>
+                <a href="/Hospitalito/home.html" class="hover:text-[#6FA3D8] transition-colors">Inicio</a>
+                <a href="/Hospitalito/index.html" class="hover:text-[#6FA3D8] transition-colors">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
+        <!-- Card Form -->
+        <div class="bg-white rounded-2xl border-t-6 border-t-[#0D3B66] shadow-lg p-10">
+            
+            <h2 class="text-3xl font-bold text-[#0D3B66] mb-8 text-center">Nuevo Paciente en Urgencias</h2>
+            
+            <form id="formRegistro" class="space-y-6">
+                
+                <!-- Sección: Datos Personales -->
+                <div class="border-l-4 border-[#6FA3D8] pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Datos Personales</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Nombre completo *
+                            </label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: Ana María García"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                DNI / NIE *
+                            </label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="12345678A"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Fecha de nacimiento *
+                            </label>
+                            <input 
+                                type="date" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Sexo *
+                            </label>
+                            <select 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                            >
+                                <option value="">Seleccionar...</option>
+                                <option value="H">Hombre</option>
+                                <option value="M">Mujer</option>
+                                <option value="O">Otro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Teléfono de contacto *
+                            </label>
+                            <input 
+                                type="tel" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="612345678"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Teléfono alternativo
+                            </label>
+                            <input 
+                                type="tel" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="987654321"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Datos de Urgencia -->
+                <div class="border-l-4 border-red-500 pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Datos de Urgencia</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Motivo de consulta *
+                            </label>
+                            <textarea 
+                                required
+                                rows="3"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Describa brevemente el motivo de la consulta de urgencia..."
+                            ></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Hora de llegada *
+                            </label>
+                            <input 
+                                type="time" 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Medio de llegada *
+                            </label>
+                            <select 
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                            >
+                                <option value="">Seleccionar...</option>
+                                <option value="propio">Medios propios</option>
+                                <option value="ambulancia">Ambulancia</option>
+                                <option value="policia">Policía</option>
+                                <option value="helicoptero">Helicóptero</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Alergias conocidas
+                            </label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: Penicilina, polen, frutos secos..."
+                            >
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Medicación actual
+                            </label>
+                            <textarea 
+                                rows="2"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Medicamentos que toma actualmente..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Acompañante -->
+                <div class="border-l-4 border-[#6FA3D8] pl-6 mb-8">
+                    <h3 class="text-xl font-bold text-[#0D3B66] mb-4">Acompañante / Contacto de Emergencia</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Nombre del acompañante
+                            </label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Nombre completo"
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Parentesco
+                            </label>
+                            <input 
+                                type="text" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="Ej: Cónyuge, hijo/a, hermano/a..."
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-[#06233f] font-medium mb-2">
+                                Teléfono del acompañante
+                            </label>
+                            <input 
+                                type="tel" 
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                                placeholder="612345678"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 justify-end pt-6">
+                    <a 
+                        href="/Hospitalito/urgencias/dist/index.html" 
+                        class="px-8 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors"
+                    >
+                        Cancelar
+                    </a>
+                    <button 
+                        type="submit" 
+                        class="px-8 py-3 bg-[#0D3B66] text-white rounded-lg font-medium hover:bg-[#0b3156] transition-colors"
+                    >
+                        Registrar paciente
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+</body>
+</html>

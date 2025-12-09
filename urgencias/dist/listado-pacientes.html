@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Hospitalito/urgencias/dist/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado de Pacientes - Urgencias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/Hospitalito/urgencias/dist/assets/main-CDFiH7rZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/Hospitalito/urgencias/dist/assets/main-ktnkTQdP.css">
+</head>
+<body class="bg-gray-50 font-['Ubuntu']">
+    
+    <!-- Header -->
+    <header class="bg-[#0D3B66] text-white py-6 shadow-lg">
+        <div class="px-6 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">📋 Listado de Pacientes en Urgencias</h1>
+            <nav class="flex gap-6">
+                <a href="/Hospitalito/urgencias/dist/index.html" class="hover:text-[#6FA3D8] transition-colors">Urgencias</a>
+                <a href="/Hospitalito/home.html" class="hover:text-[#6FA3D8] transition-colors">Inicio</a>
+                <a href="/Hospitalito/index.html" class="hover:text-[#6FA3D8] transition-colors">Cerrar sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Barra de búsqueda y filtros -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <input 
+                        type="text" 
+                        placeholder="🔍 Buscar por nombre, DNI o número de historia..."
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors"
+                    >
+                </div>
+                <select class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors">
+                    <option value="">Todas las prioridades</option>
+                    <option value="1">Nivel 1 - Resucitación</option>
+                    <option value="2">Nivel 2 - Emergencia</option>
+                    <option value="3">Nivel 3 - Urgencia</option>
+                    <option value="4">Nivel 4 - Menos urgente</option>
+                    <option value="5">Nivel 5 - No urgente</option>
+                </select>
+                <select class="px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#6FA3D8] focus:outline-none transition-colors">
+                    <option value="">Todos los estados</option>
+                    <option value="espera">En espera</option>
+                    <option value="atencion">En atención</option>
+                    <option value="observacion">En observación</option>
+                    <option value="alta">Alta médica</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Leyenda de prioridades -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="font-bold text-[#0D3B66] mb-4">Leyenda de Prioridades (Triaje Manchester)</h3>
+            <div class="flex flex-wrap gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-4 h-4 bg-red-600 rounded-full"></span>
+                    <span class="text-sm">Nivel 1 - Resucitación</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-4 h-4 bg-orange-600 rounded-full"></span>
+                    <span class="text-sm">Nivel 2 - Emergencia</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-4 h-4 bg-yellow-500 rounded-full"></span>
+                    <span class="text-sm">Nivel 3 - Urgencia</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-4 h-4 bg-green-500 rounded-full"></span>
+                    <span class="text-sm">Nivel 4 - Menos urgente</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="w-4 h-4 bg-blue-500 rounded-full"></span>
+                    <span class="text-sm">Nivel 5 - No urgente</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de pacientes -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-[#0D3B66] text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-semibold">Prioridad</th>
+                            <th class="px-6 py-4 text-left font-semibold">Paciente</th>
+                            <th class="px-6 py-4 text-left font-semibold">DNI</th>
+                            <th class="px-6 py-4 text-left font-semibold">Edad</th>
+                            <th class="px-6 py-4 text-left font-semibold">Hora llegada</th>
+                            <th class="px-6 py-4 text-left font-semibold">Tiempo espera</th>
+                            <th class="px-6 py-4 text-left font-semibold">Motivo</th>
+                            <th class="px-6 py-4 text-left font-semibold">Estado</th>
+                            <th class="px-6 py-4 text-center font-semibold">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        
+                        <!-- Paciente 1: Resucitación -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Carlos Ruiz Pérez</td>
+                            <td class="px-6 py-4 text-gray-600">23456789B</td>
+                            <td class="px-6 py-4 text-gray-600">68 años</td>
+                            <td class="px-6 py-4 text-gray-600">14:25</td>
+                            <td class="px-6 py-4">
+                                <span class="text-red-600 font-semibold">2 min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Infarto agudo de miocardio</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">En atención</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 2: Emergencia -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">María Sánchez Gómez</td>
+                            <td class="px-6 py-4 text-gray-600">34567890C</td>
+                            <td class="px-6 py-4 text-gray-600">32 años</td>
+                            <td class="px-6 py-4 text-gray-600">14:30</td>
+                            <td class="px-6 py-4">
+                                <span class="text-orange-600 font-semibold">5 min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Traumatismo craneal</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">En espera</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 3: Urgencia -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Ana Rodríguez López</td>
+                            <td class="px-6 py-4 text-gray-600">12345678A</td>
+                            <td class="px-6 py-4 text-gray-600">45 años</td>
+                            <td class="px-6 py-4 text-gray-600">13:45</td>
+                            <td class="px-6 py-4">
+                                <span class="text-yellow-600 font-semibold">50 min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Dolor abdominal agudo</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">En observación</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 4: Urgencia -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">José Martínez Díaz</td>
+                            <td class="px-6 py-4 text-gray-600">45678901D</td>
+                            <td class="px-6 py-4 text-gray-600">28 años</td>
+                            <td class="px-6 py-4 text-gray-600">14:00</td>
+                            <td class="px-6 py-4">
+                                <span class="text-yellow-600 font-semibold">35 min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Fractura en brazo</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">En espera</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 5: Menos urgente -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Laura Fernández Torres</td>
+                            <td class="px-6 py-4 text-gray-600">56789012E</td>
+                            <td class="px-6 py-4 text-gray-600">52 años</td>
+                            <td class="px-6 py-4 text-gray-600">13:20</td>
+                            <td class="px-6 py-4">
+                                <span class="text-green-600 font-semibold">1h 15min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Tos persistente</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">En espera</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 6: No urgente -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Pedro González Ruiz</td>
+                            <td class="px-6 py-4 text-gray-600">67890123F</td>
+                            <td class="px-6 py-4 text-gray-600">41 años</td>
+                            <td class="px-6 py-4 text-gray-600">12:50</td>
+                            <td class="px-6 py-4">
+                                <span class="text-blue-600 font-semibold">1h 45min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Certificado médico</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">En espera</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 7: Emergencia -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Isabel Jiménez Moreno</td>
+                            <td class="px-6 py-4 text-gray-600">78901234G</td>
+                            <td class="px-6 py-4 text-gray-600">76 años</td>
+                            <td class="px-6 py-4 text-gray-600">14:20</td>
+                            <td class="px-6 py-4">
+                                <span class="text-orange-600 font-semibold">15 min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Crisis hipertensiva</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm font-medium">En atención</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Paciente 8: Menos urgente -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-medium text-[#06233f]">Antonio López García</td>
+                            <td class="px-6 py-4 text-gray-600">89012345H</td>
+                            <td class="px-6 py-4 text-gray-600">39 años</td>
+                            <td class="px-6 py-4 text-gray-600">13:30</td>
+                            <td class="px-6 py-4">
+                                <span class="text-green-600 font-semibold">1h 5min</span>
+                            </td>
+                            <td class="px-6 py-4 text-gray-600">Esguince tobillo</td>
+                            <td class="px-6 py-4">
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">En espera</span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex justify-center gap-2">
+                                    <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg text-sm hover:bg-[#0b3156] transition-colors">
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Paginación -->
+        <div class="mt-8 flex justify-center gap-2">
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50" disabled>
+                Anterior
+            </button>
+            <button class="px-4 py-2 bg-[#0D3B66] text-white rounded-lg">1</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">2</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">3</button>
+            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+                Siguiente
+            </button>
+        </div>
+
+    </main>
+
+
+</body>
+</html>
