@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/Hospitalito/urgencias/dist/',
+  base: '/Proyecto-Hospitalito/urgencias/dist/',
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {

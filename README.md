@@ -3,24 +3,24 @@
 ## Sistema de Gestión Hospitalaria
 
 ### 🌐 URL de Despliegue
-**GitHub Pages:** [https://ivanrr462.github.io/Hospitalito/](https://ivanrr462.github.io/Hospitalito/)
+**GitHub Pages:** [https://ivanrr462.github.io/Proyecto-Hospitalito/](https://ivanrr462.github.io/Proyecto-Hospitalito/)
 
 #### Módulos del Sistema:
-- **Página Principal:** [https://ivanrr462.github.io/Hospitalito/home.html](https://ivanrr462.github.io/Hospitalito/home.html)
+- **Página Principal:** [https://ivanrr462.github.io/Proyecto-Hospitalito/home.html](https://ivanrr462.github.io/Proyecto-Hospitalito/home.html)
 - **Preinscripciones:**
-  - [Lista de Citas](https://ivanrr462.github.io/Hospitalito/preinscripciones/citas-lista.html)
-  - [Detalle de Cita](https://ivanrr462.github.io/Hospitalito/preinscripciones/cita-detalle.html)
-  - [Historia Clínica](https://ivanrr462.github.io/Hospitalito/preinscripciones/historia-clinica.html)
-  - [Buscar Pacientes](https://ivanrr462.github.io/Hospitalito/preinscripciones/buscar-pacientes.html)
+  - [Lista de Citas](https://ivanrr462.github.io/Proyecto-Hospitalito/preinscripciones/citas-lista.html)
+  - [Detalle de Cita](https://ivanrr462.github.io/Proyecto-Hospitalito/preinscripciones/cita-detalle.html)
+  - [Historia Clínica](https://ivanrr462.github.io/Proyecto-Hospitalito/preinscripciones/historia-clinica.html)
+  - [Buscar Pacientes](https://ivanrr462.github.io/Proyecto-Hospitalito/preinscripciones/buscar-pacientes.html)
 - **Enfermería:**
-  - [Dashboard](https://ivanrr462.github.io/Hospitalito/enfermeria/dist/index.html)
-  - [Mapa de Camas](https://ivanrr462.github.io/Hospitalito/enfermeria/dist/pages/mapa-camas.html)
-  - [Hoja de Medicación](https://ivanrr462.github.io/Hospitalito/enfermeria/dist/pages/hoja-medicacion.html)
+  - [Dashboard](https://ivanrr462.github.io/Proyecto-Hospitalito/enfermeria/dist/index.html)
+  - [Mapa de Camas](https://ivanrr462.github.io/Proyecto-Hospitalito/enfermeria/dist/pages/mapa-camas.html)
+  - [Hoja de Medicación](https://ivanrr462.github.io/Proyecto-Hospitalito/enfermeria/dist/pages/hoja-medicacion.html)
 - **Urgencias:**
-  - [Dashboard](https://ivanrr462.github.io/Hospitalito/urgencias/dist/index.html)
-  - [Registro de Pacientes](https://ivanrr462.github.io/Hospitalito/urgencias/dist/registro.html)
-  - [Triaje](https://ivanrr462.github.io/Hospitalito/urgencias/dist/triaje.html)
-  - [Listado de Pacientes](https://ivanrr462.github.io/Hospitalito/urgencias/dist/listado-pacientes.html)
+  - [Dashboard](https://ivanrr462.github.io/Proyecto-Hospitalito/urgencias/dist/index.html)
+  - [Registro de Pacientes](https://ivanrr462.github.io/Proyecto-Hospitalito/urgencias/dist/registro.html)
+  - [Triaje](https://ivanrr462.github.io/Proyecto-Hospitalito/urgencias/dist/triaje.html)
+  - [Listado de Pacientes](https://ivanrr462.github.io/Proyecto-Hospitalito/urgencias/dist/listado-pacientes.html)
 
 ---
 
@@ -104,7 +104,7 @@ Hospitalito/
 ├── enfermeria/                    # Módulo de Enfermería (Vite + Sass)
 │   ├── index.html                 # Archivo fuente
 │   ├── package.json
-│   ├── vite.config.js            # Base: /Hospitalito/enfermeria/dist/
+    ├── vite.config.js            # Base: /Proyecto-Hospitalito/enfermeria/dist/
 │   ├── main.js
 │   ├── styles/
 │   │   ├── main.scss
@@ -131,7 +131,7 @@ Hospitalito/
     ├── triaje.html                # Sistema de triaje Manchester
     ├── listado-pacientes.html     # Tabla de pacientes
     ├── package.json
-    ├── vite.config.js            # Base: /Hospitalito/urgencias/dist/
+    ├── vite.config.js            # Base: /Proyecto-Hospitalito/urgencias/dist/
     ├── tailwind.config.js        # Configuración Tailwind v4
     ├── src/
     │   ├── main.js
@@ -201,9 +201,9 @@ El proyecto está configurado para desplegarse desde la rama `main` en la carpet
 4. **Archivo `.nojekyll`** presente para servir assets correctamente
 
 ### Rutas configuradas:
-- **Enfermería:** `base: '/Hospitalito/enfermeria/dist/'`
-- **Urgencias:** `base: '/Hospitalito/urgencias/dist/'`
-- Todos los enlaces de navegación usan rutas absolutas desde `/Hospitalito/`
+- **Enfermería:** `base: '/Proyecto-Hospitalito/enfermeria/dist/'`
+- **Urgencias:** `base: '/Proyecto-Hospitalito/urgencias/dist/'`
+- Todos los enlaces de navegación usan rutas absolutas desde `/Proyecto-Hospitalito/`
 
 ---
 
