@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: './',
+  base: '/Hospitalito/enfermeria/dist/',
   build: {
     rollupOptions: {
       input: {

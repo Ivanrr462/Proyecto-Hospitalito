@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: './',          // para que el build funcione dentro de /dist en GitHub Pages
+  base: '/Hospitalito/urgencias/dist/',
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
